@@ -42,10 +42,17 @@ pipeline:
                       tags: latest
                   timeout: ""
                   type: Plugin
+              - step:
+                  type: Run
+                  name: Welcome World
+                  identifier: Welcome_World
+                  spec:
+                    shell: Sh
+                    command: echo "Welcome World"
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
