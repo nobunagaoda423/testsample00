@@ -25,13 +25,6 @@ pipeline:
                   timeout: ""
                   type: Run
               - step:
-                  identifier: gotest
-                  name: go_test
-                  spec:
-                    command: go test -v ./...
-                  timeout: ""
-                  type: Run
-              - step:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
@@ -42,10 +35,17 @@ pipeline:
                       tags: latest
                   timeout: ""
                   type: Plugin
+              - step:
+                  type: Run
+                  name: Hello World
+                  identifier: Hello_World
+                  spec:
+                    shell: Sh
+                    command: echo "Hello World"
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
