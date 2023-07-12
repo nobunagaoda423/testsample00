@@ -49,5 +49,3 @@ pipeline:
             type: Docker
             spec: {}
         type: CI
-  delegateSelectors:
-    - kubernetes-delegate
