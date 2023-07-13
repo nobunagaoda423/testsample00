@@ -1,0 +1,37 @@
+pipeline:
+  name: test1
+  identifier: test1
+  projectIdentifier: Harness_CI_Workspace
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1688604020583
+        repoName: harnessci
+        build: <+input>
+  stages:
+    - stage:
+        name: iii
+        identifier: iii
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: echo "hello world"
+  delegateSelectors:
+    - docker-delegate
