@@ -26,7 +26,7 @@ pipeline:
                     command: echo "Hello World"
           platform:
             os: Windows
-            arch: Amd64
+            arch: Arm64
           runtime:
             type: Docker
             spec: {}
