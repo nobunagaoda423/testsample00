@@ -18,24 +18,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: gobuild
-                  name: go_build
-                  spec:
-                    command: go build
-                  timeout: ""
-                  type: Run
-              - step:
-                  identifier: dockerbuild
-                  name: docker_build
-                  spec:
-                    image: plugins/docker
-                    settings:
-                      dry_run: "true"
-                      repo: hello/world
-                      tags: latest
-                  timeout: ""
-                  type: Plugin
-              - step:
                   type: Run
                   name: Hello World
                   identifier: Hello_World
@@ -43,7 +25,7 @@ pipeline:
                     shell: Sh
                     command: echo "Hello World"
           platform:
-            os: Linux
+            os: Windows
             arch: Amd64
           runtime:
             type: Docker
