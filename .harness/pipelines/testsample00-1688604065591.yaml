@@ -32,4 +32,4 @@ pipeline:
             spec: {}
         type: CI
   delegateSelectors:
-    - docker-delegate
+    - harnesstestworkspacedel
